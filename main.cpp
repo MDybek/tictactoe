@@ -8,7 +8,14 @@ int row,column;
 char turn = 'X';
 bool draw = false;
 
+//clang-tidy test
+bool clingtidytest = true;
+
 void display_board(){
+
+    //clang-tidy test
+    int clingTidy;
+    clingTidy = 10;
 
     cout<<"PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
     cout<<"\t\t     |     |     \n";
