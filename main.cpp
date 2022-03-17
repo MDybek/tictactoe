@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 using namespace std;
 
 char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
@@ -8,16 +7,7 @@ int row,column;
 char turn = 'X';
 bool draw = false;
 
-//clang-tidy test
-bool clingtidytest = true;
-bool clingtidytestv2 = false;
-bool clingtidytestv3 = false;
-
 void display_board(){
-
-    //clang-tidy test
-    int clingTidy;
-    clingTidy = 10;
 
     cout<<"PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
     cout<<"\t\t     |     |     \n";
@@ -85,9 +75,9 @@ bool gameover(){
         return false;
 
 
-    for(int i=0; i<3; i++)
-        for(int j=0; j<3; j++)
-            if(board[i][j] != 'X' && board[i][j] != 'O')
+    for(auto & i : board)
+        for(char j : i)
+            if(j != 'X' && j != 'O')
                 return true;
 
 
@@ -105,10 +95,10 @@ int main()
         player_turn();
         gameover();
     }
-    if(turn == 'X' && draw == false){
+    if(turn == 'X' && !draw){
         cout<<"nnCongratulations!Player with 'X' has won the game";
     }
-    else if(turn == 'O' && draw == false){
+    else if(turn == 'O' && !draw){
         cout<<"nnCongratulations!Player with 'O' has won the game";
     }
     else
