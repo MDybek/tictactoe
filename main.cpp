@@ -11,6 +11,7 @@ bool draw = false;
 //clang-tidy test
 bool clingtidytest = true;
 bool clingtidytestv2 = false;
+bool clingtidytestv3 = false;
 
 void display_board(){
 
